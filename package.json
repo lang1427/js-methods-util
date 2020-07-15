@@ -1,0 +1,16 @@
+{
+  "name": "methods-util",
+  "version": "0.1.0",
+  "description": "javascript utils",
+  "main": "methods-util.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "ECMA2015",
+    "\u001b[D"
+  ],
+  "author": "weizhixiang",
+  "license": "ISC"
+}
