@@ -307,7 +307,7 @@ export const checkStr = (str, type) => {
         case 'english': //英文
             return /^[a-zA-Z]+$/.test(str);
         case 'chinese': //中文
-            return /^[\\u4E00-\\u9FA5]+$/.test(str);
+            return /[\u4e00-\u9fa5]/g.test(str);
         case 'lower':   //小写
             return /^[a-z]+$/.test(str);
         case 'upper':   //大写
@@ -478,4 +478,60 @@ export const checkPwd = (str) => {
         Lv++
     }
     return Lv;
+}
+
+
+export default {
+    isEmail,
+    isMobile,
+    isStrictMobile,
+    isPhone,
+    isURL,
+    isString,
+    isNumber,
+    isBoolean,
+    isFunction,
+    isNull,
+    isUndefined,
+    isObj,
+    isArray,
+    isDate,
+    isRegExp,
+    isError,
+    isSymbol,
+    isPromise,
+    isSet,
+    isDeviceMobile,
+    isIOS,
+    isPC,
+    isWeiXinBrowser,
+    isQQBrowser,
+    isIEBrowser,
+    getIEVersions,
+    getBrowserType,
+    getUrlParam,
+    appendUrlParam,
+    hasClass,
+    addClass,
+    removeClass,
+    removeHtmltag,
+    injectScript,
+    getScrollPosition,
+    scrollToTop,
+    shuffle,
+    checkStr,
+    isCardID,
+    randomRange,
+    inArray,
+    sort,
+    unique,
+    union,
+    intersection,
+    listRemoveTarget,
+    listMax,
+    listMin,
+    sum,
+    average,
+    trim,
+    checkPwd
 }
