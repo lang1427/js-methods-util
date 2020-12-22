@@ -242,12 +242,31 @@ export const removeHtmltag = (str) => {
 
 // 动态引入js
 export const injectScript = (src) => {
-    const s = document.createElement('script');
-    s.type = 'text/javascript';
-    s.async = true;
-    s.src = src;
-    const t = document.getElementsByTagName('script')[0];
-    t.parentNode.insertBefore(s, t);
+    return new Promise((resolve, reject) => {
+        if (!!src) {
+            const s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = src;
+            const t = document.getElementsByTagName('script')[0];
+            t.parentNode.insertBefore(s, t);
+            if (s.readyState) {   //IE
+                s.onreadystatechange = function () {
+                    if (s.readyState == 'complete' || s.readyState == 'loaded') {
+                        s.onreadystatechange = null;
+                        resolve()
+                    }
+                }
+            } else {    //非IE
+                s.onload = function () {
+                    s.onload = null;
+                    resolve()
+                }
+            }
+        } else {
+            reject('The script src property value is null')
+        }
+    })
 }
 
 // 获取滚动的坐标
