@@ -1,6 +1,6 @@
 {
   "name": "methods-util",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "javascript utils",
   "main": "methods-util.js",
   "scripts": {
@@ -8,9 +8,11 @@
   },
   "keywords": [
     "javascript",
-    "ECMA2015",
-    "\u001b[D"
+    "ECMA2015"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "author": "weizhixiang",
   "license": "ISC"
 }
