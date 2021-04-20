@@ -499,6 +499,88 @@ export const checkPwd = (str) => {
     return Lv;
 }
 
+// 防抖函数
+export const debounce = function (fn, delay) {
+    var timer = null;
+    return function () {
+        var that = this,
+            arg = arguments;
+        if (timer) {
+            window.clearTimeout(timer)
+            timer = null
+        }
+        timer = window.setTimeout(() => {
+            fn.apply(that, arg)
+        }, delay)
+    }
+}
+
+// 节流函数
+export const throttle = function (fn, delay) {
+    var oldTime = Date.now()
+    return function () {
+        var time = Date.now(),
+            that = this,
+            arg = arguments;
+        if (time - oldTime >= delay) {
+            oldTime = Date.now()
+            return fn.apply(that, arg)
+        }
+    }
+}
+
+// 获取文章中出现次数最多的单词
+export const findMostWord = function (article) {
+    if (!article) return false
+    article = article.trim().toLowerCase()      // 清除两端空字符串并转为小写
+    let wordlist = article.match(/[a-z]+/g),   // 将文章中的每个单词转换成数组中的每一项元素
+        visited = [],
+        maxNum = 0,
+        maxWord = '';
+    article = " " + wordlist.join(" ") + " ";
+    // 遍历判断单词出现次数
+    wordlist.forEach(function (item) {
+        if (visited.indexOf(item) === -1) {
+            visited.push(item)
+            let wrod = new RegExp(" " + item + " ", "g"),       // 正则  全局匹配 当前单词                  
+                num = article.match(wrod).length;           // 当前单词出现的个数                  
+            if (num > maxNum) {
+                maxNum = num
+                maxWord = item
+            }
+        }
+    })
+    return maxWord + " " + maxNum
+}
+
+// 数组扁平化 （将一个多维数组变成一个一维数组）  [1, [2, 3, [4, 5]]]  ------>    [1, 2, 3, 4, 5]
+export const flattenArray = function (array) {
+    if (!Array.isArray(array)) return false
+    var res = []
+    res = array.reduce((prev, cur) => {
+        return prev.concat(Array.isArray(cur) ? flattenArray(cur) : cur)
+    }, [])
+    return res
+}
+
+// 求最大公约数
+export const getMaxCommonDivisor = function (a, b) {
+    if (b == 0) return a
+    return getMaxCommonDivisor(b, a % b)
+}
+// 最小公倍数
+export const getMinCommonMultiple = function (a, b) {
+    return a * b / getMaxCommonDivisor(a, b)
+}
+
+// 判断字符串是否回文字符串
+export const isPalindrome = function (str) {
+    var reg = /[\W_]/g;
+    var newStr = str.replace(reg, '').toLowerCase();
+    var reverserStr = newStr.split('').reverse().join('');
+    return reverserStr === newStr;
+}
+
 
 export default {
     isEmail,
@@ -552,5 +634,12 @@ export default {
     sum,
     average,
     trim,
-    checkPwd
+    checkPwd,
+    debounce,
+    throttle,
+    findMostWord,
+    flattenArray,
+    getMaxCommonDivisor,
+    getMinCommonMultiple,
+    isPalindrome
 }
