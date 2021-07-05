@@ -284,6 +284,18 @@ export const scrollToTop = () => {
     }
 }
 
+// 获取光标所在位置
+export const getCursortPosition = (dom) => {
+    // ie
+    if (document.selection) {
+        let range = document.selection.createRange();
+        range.setEndPoint("StartToStart", dom.createTextRange());
+        return range.text.length;
+    } else {
+        return dom.selectionStart
+    }
+}
+
 /**  功能函数  */
 
 // 洗牌随机算法
@@ -581,6 +593,17 @@ export const isPalindrome = function (str) {
     return reverserStr === newStr;
 }
 
+// 文件大小转化
+export const to_filesize = (e) => {
+    if (!e) {
+        return "-";
+    }
+    var g = [" Bytes", " KB", " MB", " GB", " TB", " PB", " EB", " ZB", " YB"];
+    var f = Math.floor(Math.log(e) / Math.log(1024));
+    var h = (f > 1) ? 2 : 0;
+    return (f > 1) ? (e / Math.pow(1024, Math.ceil(f))).toFixed(h) + g[f] : Math.ceil(e / Math.pow(1024, Math.ceil(f))).toFixed(h) + g[f];
+}
+
 
 export default {
     isEmail,
@@ -619,6 +642,7 @@ export default {
     injectScript,
     getScrollPosition,
     scrollToTop,
+    getCursortPosition,
     shuffle,
     checkStr,
     isCardID,
@@ -641,5 +665,6 @@ export default {
     flattenArray,
     getMaxCommonDivisor,
     getMinCommonMultiple,
-    isPalindrome
+    isPalindrome,
+    to_filesize
 }
