@@ -184,9 +184,9 @@ export const getBrowserType = () => {
 /**  BOM 操作相关 */
 
 // 获取url参数
-export const getUrlParam = (name) => {
+export const getUrlParam = (name, href) => {
     const reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
-    const search = window.location.href.split('?')[1] || '';
+    const search = href ? href.split('?')[1] : window.location.href.split('?')[1];
     const r = search.match(reg) || [];
     return r[2];
 }
