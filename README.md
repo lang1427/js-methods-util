@@ -1,5 +1,5 @@
 # js-methods-util
- js-methods-util 是一个js常用工具函数集
+ js-methods-util 是一个**轻量级**js常用工具函数集 
 
  ## 安装
 
