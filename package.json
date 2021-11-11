@@ -1,8 +1,9 @@
 {
   "name": "methods-util",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "javascript utils",
   "main": "methods-util.js",
+  "module": "methods-util.esm.js",
   "types": "methods-util.d.ts",
   "typings": "./methods-util.d.ts",
   "scripts": {
