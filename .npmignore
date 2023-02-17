@@ -1,0 +1,8 @@
+**/*
+!/dist/**
+!/lib/**
+!index.js
+!index.d.ts
+!index.d.cts
+!LICENSE
+!README.md

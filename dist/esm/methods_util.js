@@ -1,116 +1,112 @@
-/** 正则匹配相关信息  */
-
-// 是否邮箱
-export const isEmail = (s) => {
+// methods_util v0.5.2 Copyright (c) 2023 Wei Zhixiang and contributors
+const isEmail$1 = (s) => {
     return /^([0-9a-zA-Z_-])+@([0-9a-zA-Z_-]+(.[0-9a-zA-Z_-]{2,3}){1,2})/.test(s)
-}
+};
 
 // 是否手机号码
-export const isMobile = (s) => {
+const isMobile$1 = (s) => {
     return /^1[0-9]{10}$/.test(s)
-}
+};
 
 // 是否大陆有效手机号码
-export const isStrictMobile = (s) => {
+const isStrictMobile$1 = (s) => {
     return /^[0]?1[3|5][0-9]{10}$/.test(s)
-}
+};
 
 // 是否电话号码
-export const isPhone = (s) => {
+const isPhone$1 = (s) => {
     return /^([0-9]{3,4}-)?[0-9]{7,8}$/.test(s)
-}
+};
 
 // 是否Url地址
-export const isURL = (s) => {
+const isURL$1 = (s) => {
     return /^http[s]?:\/\/.*/.test(s)
-}
+};
 
 // 是否字符串
-export const isString = (o) => {
+const isString$1 = (o) => {
     return Object.prototype.toString.call(o).slice(8, -1) === 'String'
-}
+};
 
 // 是否数字
-export const isNumber = (o) => {
+const isNumber$1 = (o) => {
     return Object.prototype.toString.call(o).slice(8, -1) === 'Number'
-}
+};
 
 // 是否Boolean
-export const isBoolean = (o) => {
+const isBoolean$1 = (o) => {
     return Object.prototype.toString.call(o).slice(8, -1) === 'Boolean'
-}
+};
 
 // 是否函数
-export const isFunction = (o) => {
+const isFunction$1 = (o) => {
     return Object.prototype.toString.call(o).slice(8, -1) === 'Function'
-}
+};
 
 // 是否为Null
-export const isNull = (o) => {
+const isNull$1 = (o) => {
     return Object.prototype.toString.call(o).slice(8, -1) === 'Null'
-}
+};
 
 // 是否为undefined
-export const isUndefined = (o) => {
+const isUndefined$1 = (o) => {
     return Object.prototype.toString.call(o).slice(8, -1) === 'Undefined'
-}
+};
 
 // 是否对象
-export const isObj = (o) => {
+const isObj$1 = (o) => {
     return Object.prototype.toString.call(o).slice(8, -1) === 'Object'
-}
+};
 
 // 是否数组
-export const isArray = (o) => {
+const isArray$1 = (o) => {
     return Object.prototype.toString.call(o).slice(8, -1) === 'Array'
-}
+};
 
 // 是否时间
-export const isDate = (o) => {
+const isDate$1 = (o) => {
     return Object.prototype.toString.call(o).slice(8, -1) === 'Date'
-}
+};
 
 // 是否正则
-export const isRegExp = (o) => {
+const isRegExp$1 = (o) => {
     return Object.prototype.toString.call(o).slice(8, -1) === 'RegExp'
-}
+};
 
 // 是否为错误对象
-export const isError = (o) => {
+const isError$1 = (o) => {
     return Object.prototype.toString.call(o).slice(8, -1) === 'Error'
-}
+};
 
 // 是否为Symbol函数
-export const isSymbol = (o) => {
+const isSymbol$1 = (o) => {
     return Object.prototype.toString.call(o).slice(8, -1) === 'Symbol'
-}
+};
 
 // 是否为Promise对象
-export const isPromise = (o) => {
+const isPromise$1 = (o) => {
     return Object.prototype.toString.call(o).slice(8, -1) === 'Promise'
-}
+};
 
 // 是否为Set对象
-export const isSet = (o) => {
+const isSet$1 = (o) => {
     return Object.prototype.toString.call(o).slice(8, -1) === 'Set'
-}
-
-/**  浏览器设备相关  */
+};
 
 // 是否为移动端
-export const isDeviceMobile = () => {
+const isDeviceMobile$1 = () => {
     return /android|webos|iphone|ipod|balckberry/i.test(window.navigator.userAgent.toLowerCase())
-}
+};
 
 // 是否为IOS
-export const isIOS = () => {
-    var u = window.navigator.userAgent
+const isIOS$1 = () => {
+    var u = window.navigator.userAgent;
     if (u.indexOf('iPhone') !== -1) return true
     else return false
-}
+};
 
 // 是否为PC端
-export const isPC = () => {
+const isPC$1 = () => {
     var userAgentInfo = navigator.userAgent;
     var Agents = ["Android", "iPhone",
         "SymbianOS", "Windows Phone",
@@ -123,31 +119,60 @@ export const isPC = () => {
         }
     }
     return flag;
-}
+};
 
 // 是否为微信浏览器
-export const isWeiXinBrowser = () => {
-    window.navigator.userAgent.toLowerCase().match(/microMessenger/i) === 'micromessenger'
-}
+const isWeiXinBrowser$1 = () => {
+    window.navigator.userAgent.toLowerCase().match(/microMessenger/i) === 'micromessenger';
+};
 
 // 是否为QQ浏览器
-export const isQQBrowser = () => {
+const isQQBrowser$1 = () => {
     return !!window.navigator.userAgent.toLowerCase().match(/mqqbrowser|qzone|qqbrowser|qbwebviewtype/i)
-}
+};
 
 // 是否为IE浏览器
-export const isIEBrowser = () => {
+const isIEBrowser$1 = () => {
     if (!!window.ActiveXObject || "ActiveXObject" in window) {
         return true;
     } else {
         return false;
     }
-}
+};
+
+
+const is = {
+    isEmail: isEmail$1,
+    isMobile: isMobile$1,
+    isStrictMobile: isStrictMobile$1,
+    isPhone: isPhone$1,
+    isURL: isURL$1,
+    isString: isString$1,
+    isNumber: isNumber$1,
+    isBoolean: isBoolean$1,
+    isFunction: isFunction$1,
+    isNull: isNull$1,
+    isUndefined: isUndefined$1,
+    isObj: isObj$1,
+    isArray: isArray$1,
+    isDate: isDate$1,
+    isRegExp: isRegExp$1,
+    isError: isError$1,
+    isSymbol: isSymbol$1,
+    isPromise: isPromise$1,
+    isSet: isSet$1,
+    isDeviceMobile: isDeviceMobile$1,
+    isIOS: isIOS$1,
+    isPC: isPC$1,
+    isWeiXinBrowser: isWeiXinBrowser$1,
+    isQQBrowser: isQQBrowser$1,
+    isIEBrowser: isIEBrowser$1,
+};
 
 // 获取IE浏览器版本号
-export const getIEVersions = () => {
+const getIEVersions$1 = () => {
     if (!!window.ActiveXObject || "ActiveXObject" in window) {
-        var str = window.navigator.userAgent
+        var str = window.navigator.userAgent;
         if (str.indexOf("MSIE 6.0") != "-1") return "IE6";
         if (str.indexOf("MSIE 7.0") != "-1") return "IE7";
         if (str.indexOf("MSIE 8.0") != "-1") return "IE8";
@@ -157,10 +182,10 @@ export const getIEVersions = () => {
     } else {
         return false;
     }
-}
+};
 
 // 获取浏览器类型
-export const getBrowserType = () => {
+const getBrowserType$1 = () => {
     var str = window.navigator.userAgent;
     if (str.indexOf("QQBrowser") != "-1") {
         return "QQ";
@@ -179,20 +204,18 @@ export const getBrowserType = () => {
     } else if (str.indexOf("Safari") != "-1") {
         return "safari";
     }
-}
-
-/**  BOM 操作相关 */
+};
 
 // 获取url参数
-export const getUrlParam = (name, href) => {
+const getUrlParam$1 = (name, href) => {
     const reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
     const search = href ? href.split('?')[1] : window.location.href.split('?')[1];
     const r = search.match(reg) || [];
     return r[2];
-}
+};
 
 // 追加url参数
-export const appendUrlParam = (url, key, value) => {
+const appendUrlParam$1 = (url, key, value) => {
     var options = key;
     if (typeof options == 'string') {
         options = {};
@@ -200,48 +223,53 @@ export const appendUrlParam = (url, key, value) => {
     }
     options = $.param(options);
     if (url.includes('?')) {
-        url += '&' + options
+        url += '&' + options;
     } else {
-        url += '?' + options
+        url += '?' + options;
     }
     return url;
-}
+};
 
 
-/** DOM相关  */
+const bom = {
+    getIEVersions: getIEVersions$1,
+    getBrowserType: getBrowserType$1,
+    getUrlParam: getUrlParam$1,
+    appendUrlParam: appendUrlParam$1,
+};
 
 // el是否包含某个class
-export const hasClass = (el, className) => {
-    let reg = new RegExp('(^|\\s)' + className + '(\\s|$)')
+const hasClass$1 = (el, className) => {
+    let reg = new RegExp('(^|\\s)' + className + '(\\s|$)');
     return reg.test(el.className)
-}
+};
 
 // el添加某个class
-export const addClass = (el, className) => {
-    if (hasClass(el, className)) {
+const addClass$1 = (el, className) => {
+    if (hasClass$1(el, className)) {
         return
     }
-    let newClass = el.className.split(' ')
-    newClass.push(className)
-    el.className = newClass.join(' ')
-}
+    let newClass = el.className.split(' ');
+    newClass.push(className);
+    el.className = newClass.join(' ');
+};
 
 // el去除某个class
-export const removeClass = (el, className) => {
-    if (!hasClass(el, className)) {
+const removeClass$1 = (el, className) => {
+    if (!hasClass$1(el, className)) {
         return
     }
-    let reg = new RegExp('(^|\\s)' + className + '(\\s|$)', 'g')
-    el.className = el.className.replace(reg, ' ')
-}
+    let reg = new RegExp('(^|\\s)' + className + '(\\s|$)', 'g');
+    el.className = el.className.replace(reg, ' ');
+};
 
 // 去除Html标签
-export const removeHtmltag = (str) => {
+const removeHtmltag$1 = (str) => {
     return str.replace(/<[^>]+>/g, '')
-}
+};
 
 // 动态引入js
-export const injectScript = (src) => {
+const injectScript$1 = (src) => {
     return new Promise((resolve, reject) => {
         if (!!src) {
             const s = document.createElement('script');
@@ -254,38 +282,38 @@ export const injectScript = (src) => {
                 s.onreadystatechange = function () {
                     if (s.readyState == 'complete' || s.readyState == 'loaded') {
                         s.onreadystatechange = null;
-                        resolve()
+                        resolve();
                     }
-                }
+                };
             } else {    //非IE
                 s.onload = function () {
                     s.onload = null;
-                    resolve()
-                }
+                    resolve();
+                };
             }
         } else {
-            reject('The script src property value is null')
+            reject('The script src property value is null');
         }
     })
-}
+};
 
 // 获取滚动的坐标
-export const getScrollPosition = (el = window) => ({
+const getScrollPosition$1 = (el = window) => ({
     x: el.pageXOffset !== undefined ? el.pageXOffset : el.scrollLeft,
     y: el.pageYOffset !== undefined ? el.pageYOffset : el.scrollTop
-})
+});
 
 // 滚动到顶部
-export const scrollToTop = () => {
+const scrollToTop$1 = () => {
     const c = document.documentElement.scrollTop || document.body.scrollTop;
     if (c > 0) {
-        window.requestAnimationFrame(scrollToTop);
+        window.requestAnimationFrame(scrollToTop$1);
         window.scrollTo(0, c - c / 8);
     }
-}
+};
 
 // 获取光标所在位置
-export const getCursortPosition = (dom) => {
+const getCursortPosition$1 = (dom) => {
     // ie
     if (document.selection) {
         let range = document.selection.createRange();
@@ -294,24 +322,33 @@ export const getCursortPosition = (dom) => {
     } else {
         return dom.selectionStart
     }
-}
+};
 
-/**  功能函数  */
+const dom = {
+    hasClass: hasClass$1,
+    addClass: addClass$1,
+    removeClass: removeClass$1,
+    removeHtmltag: removeHtmltag$1,
+    injectScript: injectScript$1,
+    getScrollPosition: getScrollPosition$1,
+    scrollToTop: scrollToTop$1,
+    getCursortPosition: getCursortPosition$1,
+};
 
 // 洗牌随机算法
-export const shuffle = (arr) => {
+const shuffle$1 = (arr) => {
     var result = [],
         random;
     while (arr.length > 0) {
         random = Math.floor(Math.random() * arr.length);
-        result.push(arr[random])
-        arr.splice(random, 1)
+        result.push(arr[random]);
+        arr.splice(random, 1);
     }
     return result;
-}
+};
 
 // 类型判断集合
-export const checkStr = (str, type) => {
+const checkStr$1 = (str, type) => {
     switch (type) {
         case 'phone':   //手机号码
             return /^1[3|4|5|6|7|8|9][0-9]{9}$/.test(str);
@@ -348,58 +385,58 @@ export const checkStr = (str, type) => {
         default:
             return true;
     }
-}
+};
 
 // 严格的身份证效验
-export const isCardID = (sId) => {
+const isCardID$1 = (sId) => {
     if (!/(^\d{15}$)|(^\d{17}(\d|X|x)$)/.test(sId)) {
-        console.log('你输入的身份证长度或格式错误')
+        console.log('你输入的身份证长度或格式错误');
         return false
     }
     //身份证城市
     var aCity = { 11: "北京", 12: "天津", 13: "河北", 14: "山西", 15: "内蒙古", 21: "辽宁", 22: "吉林", 23: "黑龙江", 31: "上海", 32: "江苏", 33: "浙江", 34: "安徽", 35: "福建", 36: "江西", 37: "山东", 41: "河南", 42: "湖北", 43: "湖南", 44: "广东", 45: "广西", 46: "海南", 50: "重庆", 51: "四川", 52: "贵州", 53: "云南", 54: "西藏", 61: "陕西", 62: "甘肃", 63: "青海", 64: "宁夏", 65: "新疆", 71: "台湾", 81: "香港", 82: "澳门", 91: "国外" };
     if (!aCity[parseInt(sId.substr(0, 2))]) {
-        console.log('你的身份证地区非法')
+        console.log('你的身份证地区非法');
         return false
     }
     // 出生日期验证
     var sBirthday = (sId.substr(6, 4) + "-" + Number(sId.substr(10, 2)) + "-" + Number(sId.substr(12, 2))).replace(/-/g, "/"),
-        d = new Date(sBirthday)
+        d = new Date(sBirthday);
     if (sBirthday != (d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate())) {
-        console.log('身份证上的出生日期非法')
+        console.log('身份证上的出生日期非法');
         return false
     }
     // 身份证号码校验
     var sum = 0,
         weights = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2],
-        codes = "10X98765432"
+        codes = "10X98765432";
     for (var i = 0; i < sId.length - 1; i++) {
         sum += sId[i] * weights[i];
     }
     var last = codes[sum % 11]; //计算出来的最后一位身份证号码
     if (sId[sId.length - 1] != last) {
-        console.log('你输入的身份证号非法')
+        console.log('你输入的身份证号非法');
         return false
     }
     return true
-}
+};
 
 // 随机数范围
-export const randomRange = function (min, max) {
+const randomRange$1 = function (min, max) {
     if (arguments.length === 2) {
         return Math.floor(min + Math.random() * ((max + 1) - min))
     } else {
         return null
     }
-}
+};
 
 // 判断元素是否在数组中
-export const inArray = (arr, val) => {
+const inArray$1 = (arr, val) => {
     return arr.indexOf(val) != -1 ? true : false
-}
+};
 
 // 数组排序 {type} 1：从小到大 2：从大到小
-export const sort = (arr, type = 1) => {
+const sort$1 = (arr, type = 1) => {
     return arr.sort((a, b) => {
         switch (type) {
             case 1:
@@ -410,10 +447,10 @@ export const sort = (arr, type = 1) => {
                 return arr
         }
     })
-}
+};
 
 // 数组去重
-export const unique = (arr) => {
+const unique$1 = (arr) => {
     if (Array.hasOwnProperty('from')) {
         return Array.from(new Set(arr));
     } else {
@@ -426,56 +463,56 @@ export const unique = (arr) => {
         }
         return r;
     }
-}
+};
 
 // 求两个集合的并集
-export const union = (arr1, arr2) => {
-    var newArr = arr1.concat(arr2)
-    return unique(newArr)
-}
+const union$1 = (arr1, arr2) => {
+    var newArr = arr1.concat(arr2);
+    return unique$1(newArr)
+};
 
 // 求两个集合的交集
-export const intersection = (arr1, arr2) => {
-    var arr1_x = unique(arr1)
-    var arr2_x = unique(arr2)
+const intersection$1 = (arr1, arr2) => {
+    var arr1_x = unique$1(arr1);
+    var arr2_x = unique$1(arr2);
     return arr1_x.filter(function (item) {
         return arr2_x.indexOf(item) > -1
     })
-}
+};
 
 // 删除集合中其中一个目标元素
-export const listRemoveTarget = (list, target) => {
-    var index = list.indexOf(target)
+const listRemoveTarget$1 = (list, target) => {
+    var index = list.indexOf(target);
     if (index > -1) {
-        list.splice(index, 1)
+        list.splice(index, 1);
     }
     return list
-}
+};
 
 // 求集合中的最大值
-export const listMax = list => {
+const listMax$1 = list => {
     return Math.max.apply(null, list)
-}
+};
 
 // 求集合中的最小值
-export const listMin = list => {
+const listMin$1 = list => {
     return Math.min.apply(null, list)
-}
+};
 
 // 求和
-export const sum = arr => {
+const sum$1 = arr => {
     return arr.reduce((pre, cur) => {
         return pre + cur
     })
-}
+};
 
 // 平均值
-export const average = arr => {
-    return sum(arr) / arr.length
-}
+const average$1 = arr => {
+    return sum$1(arr) / arr.length
+};
 
 // 去除空格 type: 1-所有空格 2-前后空格 3-前空格 4-后空格
-export const trim = (str, type = 1) => {
+const trim$1 = (str, type = 1) => {
     switch (type) {
         case 1:
             return str.replace(/\s+/g, '')
@@ -488,63 +525,63 @@ export const trim = (str, type = 1) => {
         default:
             return str
     }
-}
+};
 
 // 检测密码强度
-export const checkPwd = (str) => {
+const checkPwd$1 = (str) => {
     var Lv = 0;
     if (str.length < 6) {
         return Lv
     }
     if (/[0-9]/.test(str)) {
-        Lv++
+        Lv++;
     }
     if (/[a-z]/.test(str)) {
-        Lv++
+        Lv++;
     }
     if (/[A-Z]/.test(str)) {
-        Lv++
+        Lv++;
     }
     if (/[\.|-|_]/.test(str)) {
-        Lv++
+        Lv++;
     }
     return Lv;
-}
+};
 
 // 防抖函数
-export const debounce = function (fn, delay) {
+const debounce$1 = function (fn, delay) {
     var timer = null;
     return function () {
         var that = this,
             arg = arguments;
         if (timer) {
-            window.clearTimeout(timer)
-            timer = null
+            window.clearTimeout(timer);
+            timer = null;
         }
         timer = window.setTimeout(() => {
-            fn.apply(that, arg)
-        }, delay)
+            fn.apply(that, arg);
+        }, delay);
     }
-}
+};
 
 // 节流函数
-export const throttle = function (fn, delay) {
-    var oldTime = Date.now()
+const throttle$1 = function (fn, delay) {
+    var oldTime = Date.now();
     return function () {
         var time = Date.now(),
             that = this,
             arg = arguments;
         if (time - oldTime >= delay) {
-            oldTime = Date.now()
+            oldTime = Date.now();
             return fn.apply(that, arg)
         }
     }
-}
+};
 
 // 获取文章中出现次数最多的单词
-export const findMostWord = function (article) {
+const findMostWord$1 = function (article) {
     if (!article) return false
-    article = article.trim().toLowerCase()      // 清除两端空字符串并转为小写
+    article = article.trim().toLowerCase();      // 清除两端空字符串并转为小写
     let wordlist = article.match(/[a-z]+/g),   // 将文章中的每个单词转换成数组中的每一项元素
         visited = [],
         maxNum = 0,
@@ -553,48 +590,48 @@ export const findMostWord = function (article) {
     // 遍历判断单词出现次数
     wordlist.forEach(function (item) {
         if (visited.indexOf(item) === -1) {
-            visited.push(item)
+            visited.push(item);
             let wrod = new RegExp(" " + item + " ", "g"),       // 正则  全局匹配 当前单词                  
                 num = article.match(wrod).length;           // 当前单词出现的个数                  
             if (num > maxNum) {
-                maxNum = num
-                maxWord = item
+                maxNum = num;
+                maxWord = item;
             }
         }
-    })
+    });
     return maxWord + " " + maxNum
-}
+};
 
 // 数组扁平化 （将一个多维数组变成一个一维数组）  [1, [2, 3, [4, 5]]]  ------>    [1, 2, 3, 4, 5]
-export const flattenArray = function (array) {
+const flattenArray$1 = function (array) {
     if (!Array.isArray(array)) return false
-    var res = []
+    var res = [];
     res = array.reduce((prev, cur) => {
-        return prev.concat(Array.isArray(cur) ? flattenArray(cur) : cur)
-    }, [])
+        return prev.concat(Array.isArray(cur) ? flattenArray$1(cur) : cur)
+    }, []);
     return res
-}
+};
 
 // 求最大公约数
-export const getMaxCommonDivisor = function (a, b) {
+const getMaxCommonDivisor$1 = function (a, b) {
     if (b == 0) return a
-    return getMaxCommonDivisor(b, a % b)
-}
+    return getMaxCommonDivisor$1(b, a % b)
+};
 // 最小公倍数
-export const getMinCommonMultiple = function (a, b) {
-    return a * b / getMaxCommonDivisor(a, b)
-}
+const getMinCommonMultiple$1 = function (a, b) {
+    return a * b / getMaxCommonDivisor$1(a, b)
+};
 
 // 判断字符串是否回文字符串
-export const isPalindrome = function (str) {
+const isPalindrome$1 = function (str) {
     var reg = /[\W_]/g;
     var newStr = str.replace(reg, '').toLowerCase();
     var reverserStr = newStr.split('').reverse().join('');
     return reverserStr === newStr;
-}
+};
 
 // 文件大小转化
-export const to_filesize = (e) => {
+const to_filesize$1 = (e) => {
     if (!e) {
         return "-";
     }
@@ -602,10 +639,46 @@ export const to_filesize = (e) => {
     var f = Math.floor(Math.log(e) / Math.log(1024));
     var h = (f > 1) ? 2 : 0;
     return (f > 1) ? (e / Math.pow(1024, Math.ceil(f))).toFixed(h) + g[f] : Math.ceil(e / Math.pow(1024, Math.ceil(f))).toFixed(h) + g[f];
-}
+};
+
+const func = {
+    shuffle: shuffle$1,
+    checkStr: checkStr$1,
+    isCardID: isCardID$1,
+    randomRange: randomRange$1,
+    inArray: inArray$1,
+    sort: sort$1,
+    unique: unique$1,
+    union: union$1,
+    intersection: intersection$1,
+    listRemoveTarget: listRemoveTarget$1,
+    listMax: listMax$1,
+    listMin: listMin$1,
+    sum: sum$1,
+    average: average$1,
+    trim: trim$1,
+    checkPwd: checkPwd$1,
+    debounce: debounce$1,
+    throttle: throttle$1,
+    findMostWord: findMostWord$1,
+    flattenArray: flattenArray$1,
+    getMaxCommonDivisor: getMaxCommonDivisor$1,
+    getMinCommonMultiple: getMinCommonMultiple$1,
+    isPalindrome: isPalindrome$1,
+    to_filesize: to_filesize$1
+};
+
+const methods_util = {
+    ...is,
+    ...bom,
+    ...dom,
+    ...func
+};
 
 
-export default {
+methods_util.default = methods_util;
+
+const {
     isEmail,
     isMobile,
     isStrictMobile,
@@ -667,4 +740,7 @@ export default {
     getMinCommonMultiple,
     isPalindrome,
     to_filesize
-}
+} = methods_util;
+
+export { addClass, appendUrlParam, average, checkPwd, checkStr, debounce, findMostWord, flattenArray, getBrowserType, getCursortPosition, getIEVersions, getMaxCommonDivisor, getMinCommonMultiple, getScrollPosition, getUrlParam, hasClass, inArray, injectScript, intersection, isArray, isBoolean, isCardID, isDate, isDeviceMobile, isEmail, isError, isFunction, isIEBrowser, isIOS, isMobile, isNull, isNumber, isObj, isPC, isPalindrome, isPhone, isPromise, isQQBrowser, isRegExp, isSet, isStrictMobile, isString, isSymbol, isURL, isUndefined, isWeiXinBrowser, listMax, listMin, listRemoveTarget, randomRange, removeClass, removeHtmltag, scrollToTop, shuffle, sort, sum, throttle, to_filesize, trim, union, unique };
+//# sourceMappingURL=methods_util.js.map
