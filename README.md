@@ -1,4 +1,7 @@
 # js-methods-util
+
+<a href="https://www.murphysec.com/accept?code=2a46bbdb4bf650b0a76e29840270bd8b&type=1&from=2" alt="Security Status"><img src="https://www.murphysec.com/platform3/v3/badge/1626831223934976000.svg" /></a>
+
  js-methods-util 是一个**轻量级**js常用工具函数集 
 
  ## 安装
