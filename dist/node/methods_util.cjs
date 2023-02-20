@@ -1,4 +1,4 @@
-// methods_util v0.5.2 Copyright (c) 2023 Wei Zhixiang and contributors
+// methods_util v0.6.3 Copyright (c) 2023 Wei Zhixiang and contributors
 'use strict';
 
 const isEmail = (s) => {

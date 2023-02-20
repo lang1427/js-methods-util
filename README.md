@@ -1,8 +1,8 @@
-# js-methods-util
+# methods-util
 
 <a href="https://www.murphysec.com/accept?code=2a46bbdb4bf650b0a76e29840270bd8b&type=1&from=2" alt="Security Status"><img src="https://www.murphysec.com/platform3/v3/badge/1626831223934976000.svg" /></a>
 
- js-methods-util 是一个**轻量级**js常用工具函数集 
+ methods-util 是一个**轻量级**js常用工具函数集， 同时支持浏览器端和Node.js
 
  ## 安装
 
@@ -28,8 +28,32 @@ $ npm install methods-util
     isEmail('xxxx@xxx.xxx')
 ```
 
+> require
 
-### 正则匹配相关信息 函数
+```js
+    const methods_util = require("methods-util")  // 全局导入
+    const {isEmail} = require("methods-util")  // 按需导入
+```
+
+ 如果在尝试将模块导入自定义或遗留环境时出现问题，可以尝试直接导入模块包
+
+```js
+    const methods_util = require("methods-util/dist/node/methods_util.cjs")  // 全局导入
+    const {isArray} = require("methods-util/dist/node/methods_util.cjs")  // 按需导入
+```
+
+> cdn
+
+``` html
+<script src="https://unpkg.com/methods-util@latest/dist/methods_util.js"></script>
+
+<!-- minify -->
+<script src="https://unpkg.com/methods-util@latest/dist/methods_util.min.js"></script>
+```
+
+## API
+
+### is 模块 用于检测值是否符合标准
 
 ```js
 // 检测是否为邮箱
@@ -158,7 +182,7 @@ isQQBrowser()
 isIEBrowser()
 ```
 
-### 获取浏览器类型相关
+### bom 浏览器BOM模块相关函数
 
 ```js
 // 获取IE浏览器版本号
@@ -169,8 +193,6 @@ getIEVersions()
 // 获取浏览器类型
 getBrowserType()
 ```
-
-### BOM操作相关
 
 ```js
 // 获取url参数  假设当前url：https://www.baidu.com/search?name=zhangshan&age=19
@@ -183,7 +205,7 @@ getUrlParam('name') // 获取name的值
 appendUrlParam('https://www.baidu.com/','name','zhangshan')
 ```
 
-### DOM操作相关
+### dom HTML元素DOM操作相关
 
 ```html
 <div id="dv" class="active"></div>

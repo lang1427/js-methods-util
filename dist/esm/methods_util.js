@@ -1,4 +1,4 @@
-// methods_util v0.5.2 Copyright (c) 2023 Wei Zhixiang and contributors
+// methods_util v0.6.3 Copyright (c) 2023 Wei Zhixiang and contributors
 const isEmail$1 = (s) => {
     return /^([0-9a-zA-Z_-])+@([0-9a-zA-Z_-]+(.[0-9a-zA-Z_-]{2,3}){1,2})/.test(s)
 };
