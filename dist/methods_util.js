@@ -1,4 +1,4 @@
-// methods_util v0.6.3 Copyright (c) 2023 Wei Zhixiang and contributors
+// methods_util v0.6.4 Copyright (c) 2023 Wei Zhixiang and contributors
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :

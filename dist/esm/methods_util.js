@@ -1,4 +1,4 @@
-// methods_util v0.6.3 Copyright (c) 2023 Wei Zhixiang and contributors
+// methods_util v0.6.4 Copyright (c) 2023 Wei Zhixiang and contributors
 const isEmail$1 = (s) => {
     return /^([0-9a-zA-Z_-])+@([0-9a-zA-Z_-]+(.[0-9a-zA-Z_-]{2,3}){1,2})/.test(s)
 };
@@ -678,69 +678,69 @@ const methods_util = {
 
 methods_util.default = methods_util;
 
-const {
-    isEmail,
-    isMobile,
-    isStrictMobile,
-    isPhone,
-    isURL,
-    isString,
-    isNumber,
-    isBoolean,
-    isFunction,
-    isNull,
-    isUndefined,
-    isObj,
-    isArray,
-    isDate,
-    isRegExp,
-    isError,
-    isSymbol,
-    isPromise,
-    isSet,
-    isDeviceMobile,
-    isIOS,
-    isPC,
-    isWeiXinBrowser,
-    isQQBrowser,
-    isIEBrowser,
-    getIEVersions,
-    getBrowserType,
-    getUrlParam,
-    appendUrlParam,
-    hasClass,
-    addClass,
-    removeClass,
-    removeHtmltag,
-    injectScript,
-    getScrollPosition,
-    scrollToTop,
-    getCursortPosition,
-    shuffle,
-    checkStr,
-    isCardID,
-    randomRange,
-    inArray,
-    sort,
-    unique,
-    union,
-    intersection,
-    listRemoveTarget,
-    listMax,
-    listMin,
-    sum,
-    average,
-    trim,
-    checkPwd,
-    debounce,
-    throttle,
-    findMostWord,
-    flattenArray,
-    getMaxCommonDivisor,
-    getMinCommonMultiple,
-    isPalindrome,
-    to_filesize
-} = methods_util;
+const methods_util$1 = methods_util;
 
-export { addClass, appendUrlParam, average, checkPwd, checkStr, debounce, findMostWord, flattenArray, getBrowserType, getCursortPosition, getIEVersions, getMaxCommonDivisor, getMinCommonMultiple, getScrollPosition, getUrlParam, hasClass, inArray, injectScript, intersection, isArray, isBoolean, isCardID, isDate, isDeviceMobile, isEmail, isError, isFunction, isIEBrowser, isIOS, isMobile, isNull, isNumber, isObj, isPC, isPalindrome, isPhone, isPromise, isQQBrowser, isRegExp, isSet, isStrictMobile, isString, isSymbol, isURL, isUndefined, isWeiXinBrowser, listMax, listMin, listRemoveTarget, randomRange, removeClass, removeHtmltag, scrollToTop, shuffle, sort, sum, throttle, to_filesize, trim, union, unique };
+const isEmail = methods_util$1.isEmail;
+const isMobile = methods_util$1.isMobile;
+const isStrictMobile = methods_util$1.isStrictMobile;
+const isPhone = methods_util$1.isPhone;
+const isURL = methods_util$1.isURL;
+const isString = methods_util$1.isString;
+const isNumber = methods_util$1.isNumber;
+const isBoolean = methods_util$1.isBoolean;
+const isFunction = methods_util$1.isFunction;
+const isNull = methods_util$1.isNull;
+const isUndefined = methods_util$1.isUndefined;
+const isObj = methods_util$1.isObj;
+const isArray = methods_util$1.isArray;
+const isDate = methods_util$1.isDate;
+const isRegExp = methods_util$1.isRegExp;
+const isError = methods_util$1.isError;
+const isSymbol = methods_util$1.isSymbol;
+const isPromise = methods_util$1.isPromise;
+const isSet = methods_util$1.isSet;
+const isDeviceMobile = methods_util$1.isDeviceMobile;
+const isIOS = methods_util$1.isIOS;
+const isPC = methods_util$1.isPC;
+const isWeiXinBrowser = methods_util$1.isWeiXinBrowser;
+const isQQBrowser = methods_util$1.isQQBrowser;
+const isIEBrowser = methods_util$1.isIEBrowser;
+const getIEVersions = methods_util$1.getIEVersions;
+const getBrowserType = methods_util$1.getBrowserType;
+const getUrlParam = methods_util$1.getUrlParam;
+const appendUrlParam = methods_util$1.appendUrlParam;
+const hasClass = methods_util$1.hasClass;
+const addClass = methods_util$1.addClass;
+const removeClass = methods_util$1.removeClass;
+const removeHtmltag = methods_util$1.removeHtmltag;
+const injectScript = methods_util$1.injectScript;
+const getScrollPosition = methods_util$1.getScrollPosition;
+const scrollToTop = methods_util$1.scrollToTop;
+const getCursortPosition = methods_util$1.getCursortPosition;
+const shuffle = methods_util$1.shuffle;
+const checkStr = methods_util$1.checkStr;
+const isCardID = methods_util$1.isCardID;
+const randomRange = methods_util$1.randomRange;
+const inArray = methods_util$1.inArray;
+const sort = methods_util$1.sort;
+const unique = methods_util$1.unique;
+const union = methods_util$1.union;
+const intersection = methods_util$1.intersection;
+const listRemoveTarget = methods_util$1.listRemoveTarget;
+const listMax = methods_util$1.listMax;
+const listMin = methods_util$1.listMin;
+const sum = methods_util$1.sum;
+const average = methods_util$1.average;
+const trim = methods_util$1.trim;
+const checkPwd = methods_util$1.checkPwd;
+const debounce = methods_util$1.debounce;
+const throttle = methods_util$1.throttle;
+const findMostWord = methods_util$1.findMostWord;
+const flattenArray = methods_util$1.flattenArray;
+const getMaxCommonDivisor = methods_util$1.getMaxCommonDivisor;
+const getMinCommonMultiple = methods_util$1.getMinCommonMultiple;
+const isPalindrome = methods_util$1.isPalindrome;
+const to_filesize = methods_util$1.to_filesize;
+
+export { addClass, appendUrlParam, average, checkPwd, checkStr, debounce, methods_util$1 as default, findMostWord, flattenArray, getBrowserType, getCursortPosition, getIEVersions, getMaxCommonDivisor, getMinCommonMultiple, getScrollPosition, getUrlParam, hasClass, inArray, injectScript, intersection, isArray, isBoolean, isCardID, isDate, isDeviceMobile, isEmail, isError, isFunction, isIEBrowser, isIOS, isMobile, isNull, isNumber, isObj, isPC, isPalindrome, isPhone, isPromise, isQQBrowser, isRegExp, isSet, isStrictMobile, isString, isSymbol, isURL, isUndefined, isWeiXinBrowser, listMax, listMin, listRemoveTarget, randomRange, removeClass, removeHtmltag, scrollToTop, shuffle, sort, sum, throttle, to_filesize, trim, union, unique };
 //# sourceMappingURL=methods_util.js.map
