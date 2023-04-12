@@ -197,7 +197,7 @@ getBrowserType()
 ```js
 // 获取url参数  假设当前url：https://www.baidu.com/search?name=zhangshan&age=19
 // 你也可以手动传入url为第二个参数
-getUrlParam('name') // 获取name的值
+getUrlParam('name') // 获取name的值，找不到则返回null
 ```
 
 ```js

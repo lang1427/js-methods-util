@@ -1,4 +1,4 @@
-// methods_util v0.6.4 Copyright (c) 2023 Wei Zhixiang and contributors
+// methods_util v0.6.5 Copyright (c) 2023 Wei Zhixiang and contributors
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
@@ -261,6 +261,9 @@
   var getUrlParam = function getUrlParam(name, href) {
     var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
     var search = href ? href.split('?')[1] : window.location.href.split('?')[1];
+    if (!search) {
+      return null;
+    }
     var r = search.match(reg) || [];
     return r[2];
   };

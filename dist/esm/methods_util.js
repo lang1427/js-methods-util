@@ -1,4 +1,4 @@
-// methods_util v0.6.4 Copyright (c) 2023 Wei Zhixiang and contributors
+// methods_util v0.6.5 Copyright (c) 2023 Wei Zhixiang and contributors
 const isEmail$1 = (s) => {
     return /^([0-9a-zA-Z_-])+@([0-9a-zA-Z_-]+(.[0-9a-zA-Z_-]{2,3}){1,2})/.test(s)
 };
@@ -210,6 +210,9 @@ const getBrowserType$1 = () => {
 const getUrlParam$1 = (name, href) => {
     const reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
     const search = href ? href.split('?')[1] : window.location.href.split('?')[1];
+    if (!search) {
+        return null
+    }
     const r = search.match(reg) || [];
     return r[2];
 };
