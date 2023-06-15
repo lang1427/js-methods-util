@@ -1,4 +1,4 @@
-// methods_util v0.6.5 Copyright (c) 2023 Wei Zhixiang and contributors
+// methods_util v0.6.6 Copyright (c) 2023 Wei Zhixiang and contributors
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
@@ -653,7 +653,7 @@
     if (/[A-Z]/.test(str)) {
       Lv++;
     }
-    if (/[\.|-|_]/.test(str)) {
+    if (/[\W|_]/.test(str)) {
       Lv++;
     }
     return Lv;

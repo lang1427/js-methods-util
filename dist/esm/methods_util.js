@@ -1,4 +1,4 @@
-// methods_util v0.6.5 Copyright (c) 2023 Wei Zhixiang and contributors
+// methods_util v0.6.6 Copyright (c) 2023 Wei Zhixiang and contributors
 const isEmail$1 = (s) => {
     return /^([0-9a-zA-Z_-])+@([0-9a-zA-Z_-]+(.[0-9a-zA-Z_-]{2,3}){1,2})/.test(s)
 };
@@ -545,7 +545,7 @@ const checkPwd$1 = (str) => {
     if (/[A-Z]/.test(str)) {
         Lv++;
     }
-    if (/[\.|-|_]/.test(str)) {
+    if (/[\W|_]/.test(str)) {
         Lv++;
     }
     return Lv;

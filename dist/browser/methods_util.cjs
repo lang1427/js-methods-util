@@ -1,4 +1,4 @@
-// methods_util v0.6.5 Copyright (c) 2023 Wei Zhixiang and contributors
+// methods_util v0.6.6 Copyright (c) 2023 Wei Zhixiang and contributors
 'use strict';
 
 const isEmail = (s) => {
@@ -547,7 +547,7 @@ const checkPwd = (str) => {
     if (/[A-Z]/.test(str)) {
         Lv++;
     }
-    if (/[\.|-|_]/.test(str)) {
+    if (/[\W|_]/.test(str)) {
         Lv++;
     }
     return Lv;
